@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:ital,wght@0,300;0,400;1,700&display=swap');
+
+:root {
+    /* Cores*/
+    --azul-escuro  : rgba(0, 0, 0, 0.25);
+    --branco       : #FFFFFF;
+    --cinza-escuro : #333;
+    --preto        : #222;
+    --rosa     : #EE3190;
+    --roxo     : #69265C;
+    
+    /* Cores fundo e navigation */
+    --azul-aqua: #274F69;
+    --gradient-rosa: linear-gradient(to right, var(--rosa), var(--roxo));
+
+    /* Cores icones */
+    --vermelho: #f44336;
+    --laranja : #ffa117;
+    --verde   : #0fc70f;
+    --azul    : #2196f3;
+    --lilas   : #b145e9;
+
+    /* Fonte */
+    --poppins : 'Poppins', sans-serif;
+
+}

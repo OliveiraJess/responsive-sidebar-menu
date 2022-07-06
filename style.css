@@ -1,0 +1,170 @@
+@import "./variaveis.css";
+
+* {
+    box-sizing : border-box;
+    font-family: var(--poppins);
+    margin     : 0;
+    padding    : 0;
+}
+
+.container {
+    align-items    : center;
+    background     : var(--gradient-rosa);
+    display        : flex;
+    justify-content: flex-start;
+    min-height     : 100vh;
+    width          : 100%;
+}
+
+.navigation {
+    align-items    : center;
+    background     : var(--azul-aqua);
+    display        : flex;
+    inset          : 20px 0 20px 20px;
+    justify-content: center;
+    min-height     : 500px;
+    position       : fixed;
+    transition     : 0.5s;
+    width          : 75px;
+}
+
+.navigation.open {
+    width: 250px;
+}
+
+.navigation .menu-toggle {
+    align-items    : center;
+    border-bottom  : 1px solid var(--azul-escuro);
+    cursor         : pointer;
+    display        : flex;
+    height         : 60px;
+    justify-content: flex-start;
+    left           : 0;
+    padding        : 0 20px;
+    position       : absolute;
+    top            : 0;
+    width          : 100%;
+}
+
+.navigation .menu-toggle::before {
+    background: var(--cinza-escuro);
+    content   : '';
+    height    : 2px;
+    position  : absolute;
+    transform : translateY(-8px);
+    transition: 0.5s;
+    width     : 30px;
+}
+
+.navigation.open .menu-toggle::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.navigation .menu-toggle::after {
+    background: var(--cinza-escuro);
+    box-shadow: 0 -8px 0 var(--cinza-escuro);
+    content   : '';
+    height    : 2px;
+    position  : absolute;
+    transform : translateY(8px);
+    transition: 0.5s;
+    width     : 30px;
+}
+
+.navigation.open .menu-toggle::after {
+    box-shadow: none;
+    transform : translateY(0) rotate(-45deg);
+}
+
+.navigation ul {
+    display       : flex;
+    flex-direction: column;
+    gap           : 10px;
+    width         : 100%;
+}
+
+.navigation ul li {
+    align-items    : center;
+    cursor         : pointer;
+    display        : flex;
+    height         : 60px;
+    justify-content: flex-start;
+    list-style     : none;
+    padding        : 0 10px;
+    position       : relative;
+    transition     : 0.5s;
+    width          : 100%;
+}
+
+.navigation ul li.active {
+    transform: translateX(30px);
+}
+
+.navigation.open ul li.active {
+    transform: translateX(10px);
+}
+
+.navigation ul li a {
+    align-items    : center;
+    display        : flex;
+    justify-content: flex-start;
+    position       : relative;
+    text-align     : center;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon {
+    border-radius: 10px;
+    color        : var(--preto);
+    display      : block;
+    font-size    : 1.75em;
+    height       : 30px;
+    line-height  : 60px;
+    min-width    : 55px;
+    position     : relative;
+    transition   : 0.5s;
+}
+
+.navigation ul li.active a .icon {
+    background: var(--color);
+    color     : var(--branco);
+}
+
+.navigation ul li a .icon::before {
+    background   : var(--color);
+    border-radius: 10px;
+    content      : '';
+    filter       : blur(8px);
+    height       : 100%;
+    left         : 0;
+    opacity      : 0;
+    position     : absolute;
+    top          : 10px;
+    transition   : 0.5s;
+    width        : 100%;
+}
+
+.navigation ul li.active a .icon::before {
+    opacity: 0.5;
+}
+
+.navigation ul li a .text {
+    align-items: center;
+    color      : var(--cinza-escuro);
+    display    : flex;
+    height     : 60px;
+    opacity    : 0;
+    padding    : 0 15px;
+    position   : relative;
+    transition : 0.5s;
+    visibility : hidden;
+}
+
+.navigation.open ul li a .text {
+    opacity   : 1;
+    visibility: visible;
+}
+
+.navigation ul li.active a .text {
+    color: var(--color);
+}
